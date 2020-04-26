@@ -7,23 +7,10 @@ const logger = new Logger({
 });
 
 async function manageAssets(opts) {
-  if (!opts.assetPath) {
-    opts.assetPath = opts.htmlPath;
-  }
-
   try {
     const flags = [];
-    if (opts.htmlPath) {
-      flags.push(`--html_dir=${opts.htmlPath}`)
-    }
-    if (opts.assetPath) {
-      flags.push(`--assets_dir=${opts.assetPath}`)
-    }
-    if (opts.jsonAssetsPath) {
-      flags.push(`--json_assets_dir=${opts.jsonAssetsPath}`)
-    }
-    if (opts.genPath) {
-      flags.push(`--gen_dir=${opts.genPath}`)
+    if (opts.config) {
+      flags.push(`--config=${opts.config}`)
     }
     if (opts.debug) {
       flags.push(`--debug=${opts.debug}`)
