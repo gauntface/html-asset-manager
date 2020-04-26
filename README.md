@@ -1,6 +1,6 @@
 # HTML Asset Manager
 
-[![Build and Test](https://github.com/gauntface/hugo-node-fns/workflows/Build%20and%20Test/badge.svg)](https://github.com/gauntface/hugo-node-fns/actions?query=workflow%3A%22Build+and+Test%22) [![Publish](https://github.com/gauntface/hugo-node-fns/workflows/Publish/badge.svg)](https://github.com/gauntface/hugo-node-fns/actions?query=workflow%3APublish)
+[![Build and Test](https://github.com/gauntface/html-asset-manager/workflows/Build%20and%20Test/badge.svg)](https://github.com/gauntface/html-asset-manager/actions?query=workflow%3A%22Build+and+Test%22) [![Publish](https://github.com/gauntface/html-asset-manager/workflows/Publish/badge.svg)](https://github.com/gauntface/html-asset-manager/actions?query=workflow%3APublish)
 
 Run go-html-asset-manager commands easily from node.
 
@@ -24,5 +24,6 @@ await ham.manageAssets({
   jsonAssetsPath: path.join(projectPath, 'data'),
   genPath: path.join(projectPath, 'static', 'generated'),
   debug: 'example-file.html',
+  output: true,
 });
 ```
