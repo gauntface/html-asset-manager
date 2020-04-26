@@ -1,5 +1,10 @@
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const {Logger} = require('@hopin/logger');
+
+const logger = new Logger({
+  prefix: '@gauntface/html-asset-manager',
+});
 
 async function manageAssets(opts) {
   if (!opts.assetPath) {

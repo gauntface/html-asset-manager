@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/gauntface/html-asset-manager/issues"
   },
-  "homepage": "https://github.com/gauntface/html-asset-manager#readme"
+  "homepage": "https://github.com/gauntface/html-asset-manager#readme",
+  "dependencies": {
+    "@hopin/logger": "^2.0.34"
+  }
 }
