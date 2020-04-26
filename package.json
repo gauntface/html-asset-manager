@@ -1,0 +1,22 @@
+{
+  "name": "@gauntface/html-asset-manager",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.0",
+  "description": "Run go-html-asset-manager commands easily from node.",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Build not needed'",
+    "test": "echo 'Tests not written'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauntface/html-asset-manager.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/gauntface/html-asset-manager/issues"
+  },
+  "homepage": "https://github.com/gauntface/html-asset-manager#readme"
+}
