@@ -8,6 +8,7 @@ Run go-html-asset-manager commands easily from node.
 
 ```shell
 go get -u github.com/gauntface/go-html-asset-manager/cmds/htmlassets/
+go get -u github.com/gauntface/go-html-asset-manager/cmds/genimgs/
 ```
 
 ## API
@@ -15,15 +16,54 @@ go get -u github.com/gauntface/go-html-asset-manager/cmds/htmlassets/
 ```javascript
 const ham = require('@gauntface/html-asset-manager');
 
-const projectPath = "~/example-project/";
-
 // manage assets
 await ham.manageAssets({
-  htmlPath: path.join(projectPath, 'public'),
-  assetPath: path.join(projectPath, 'public'),
-  jsonAssetsPath: path.join(projectPath, 'data'),
-  genPath: path.join(projectPath, 'static', 'generated'),
+  config: path.join('~/example-project/asset-manage.json'),
+  output: true,
   debug: 'example-file.html',
+});
+
+// generage images
+await ham.generateImages({
+  config: path.join('~/example-project/asset-manage.json'),
   output: true,
 });
+```
+
+## Config File
+
+```json
+{
+  "html-dir": "public/",
+  "assets": {
+    "static-dir": "public/",
+    "generated-dir": "public/generated/",
+    "json-dir": "data/"
+  },
+  "gen-assets": {
+    "static-dir": "static/",
+    "output-dir": "static/generated/",
+    "max-width": 800,
+    "max-density": 3
+  },
+  "img-to-picture": [
+    {
+      "id": "l-blog",
+      "max-width": 800,
+      "source-sizes": [
+        "(min-width: 800px) 800px",
+        "100vw"
+      ]
+    },
+    {
+      "id": "c-blog-item__img",
+      "max-width": 200,
+      "source-sizes": [
+        "(min-width: 800px) 200px",
+        "20vw"
+      ]
+    }
+  ],
+  "ratio-wrapper": ["l-blog"]
+}
 ```

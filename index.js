@@ -35,6 +35,33 @@ async function manageAssets(opts) {
   }
 }
 
+async function generateImages(opts) {
+  try {
+    const flags = [];
+    if (opts.config) {
+      flags.push(`--config=${opts.config}`)
+    }
+    const { stdout, stderr } = await exec(`genimgs ${flags.join(' ')}`)
+    if (opts.output) {
+      if (stdout) {
+        logger.log(`Output from genimgs tool:\n\n${stdout}`);
+      }
+      if (stderr) {
+        logger.error(`Error output from genimgs tool:\n\n${stderr}`);
+      }
+    }
+  } catch (err) {
+    if (err.stdout) {
+      logger.log(`Output from genimgs tool:\n\n${err.stdout}`);
+    }
+    if (err.stderr) {
+      logger.error(`Error output from genimgs tool:\n\n${err.stderr}`);
+    }
+    throw err
+  }
+}
+
 module.exports = {
   manageAssets,
+  generateImages,
 }
