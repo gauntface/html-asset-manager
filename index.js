@@ -15,6 +15,9 @@ async function manageAssets(opts) {
     if (opts.debug) {
       flags.push(`--debug=${opts.debug}`)
     }
+    if (opts.vimeo) {
+      flags.push(`--vimeo=${opts.vimeo}`)
+    }
     const { stdout, stderr } = await exec(`htmlassets ${flags.join(' ')}`)
     if (opts.output) {
       if (stdout) {

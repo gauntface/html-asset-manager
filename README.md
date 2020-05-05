@@ -20,6 +20,7 @@ const ham = require('@gauntface/html-asset-manager');
 await ham.manageAssets({
   config: path.join('~/example-project/asset-manage.json'),
   output: true,
+  vimeo: process.env['VIMEO_TOKEN'],
   debug: 'example-file.html',
 });
 
