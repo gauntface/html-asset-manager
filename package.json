@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Run go-html-asset-manager commands easily from node.",
   "main": "index.js",
   "scripts": {
